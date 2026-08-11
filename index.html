@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ei Ei Aung | Assistant Chief Accountant</title>
+    <title>Ei Ei Aung | Senior Accountant & Financial Professional</title>
+    <!-- Google Fonts & FontAwesome Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -12,6 +13,7 @@
             --primary: #0f4c5c;
             --primary-light: #e6f0f2;
             --secondary: #e36414;
+            --accent: #fb8b24;
             --dark: #0f172a;
             --light: #f8fafc;
             --white: #ffffff;
@@ -39,10 +41,11 @@
             overflow-x: hidden;
         }
 
+        /* Navigation */
         header {
             position: sticky;
             top: 0;
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--gray-200);
             z-index: 1000;
@@ -58,10 +61,11 @@
         }
 
         .brand-logo {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             font-weight: 800;
             color: var(--primary);
             text-decoration: none;
+            letter-spacing: -0.5px;
             display: flex;
             align-items: center;
             gap: 10px;
@@ -72,7 +76,7 @@
             color: var(--white);
             padding: 4px 10px;
             border-radius: 8px;
-            font-size: 0.95rem;
+            font-size: 1rem;
         }
 
         .nav-links {
@@ -107,12 +111,14 @@
             box-shadow: 0 6px 16px rgba(15, 76, 92, 0.3);
         }
 
+        /* Main Layout */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 2rem;
         }
 
+        /* Hero Section */
         .hero {
             display: grid;
             grid-template-columns: 1.2fr 0.8fr;
@@ -127,20 +133,20 @@
             gap: 8px;
             background: var(--primary-light);
             color: var(--primary);
-            font-size: 0.95rem;
+            font-size: 1rem;
             font-weight: 800;
             padding: 0.5rem 1.2rem;
             border-radius: 30px;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
             margin-bottom: 1.5rem;
         }
 
         .hero-text h1 {
-            font-size: 3rem;
+            font-size: 3.2rem;
             line-height: 1.15;
             font-weight: 800;
             color: var(--dark);
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
             letter-spacing: -1px;
         }
 
@@ -149,7 +155,7 @@
         }
 
         .sub-title {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             color: var(--gray-600);
             margin-bottom: 1.5rem;
             font-weight: 500;
@@ -214,12 +220,14 @@
             color: var(--primary);
         }
 
+        /* Profile Card */
         .profile-card {
             background: var(--white);
             border-radius: 24px;
             padding: 2rem;
             box-shadow: var(--shadow-lg);
             text-align: center;
+            position: relative;
             border: 1px solid var(--gray-100);
         }
 
@@ -257,18 +265,11 @@
             margin-bottom: 0.3rem;
         }
 
-        .profile-card .designation {
-            color: var(--primary);
-            font-size: 0.95rem;
-            font-weight: 700;
-            margin-bottom: 0.2rem;
-        }
-
-        .profile-card .sub-designation {
+        .profile-card p {
             color: var(--gray-600);
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             margin-bottom: 1.5rem;
-            font-weight: 600;
+            font-weight: 500;
         }
 
         .info-pills {
@@ -294,12 +295,13 @@
             font-size: 1.1rem;
         }
 
+        /* Section Global */
         section {
-            padding: 4rem 0;
+            padding: 5rem 0;
         }
 
         .section-header {
-            margin-bottom: 2.5rem;
+            margin-bottom: 3rem;
         }
 
         .section-header h2 {
@@ -315,13 +317,14 @@
             font-size: 1.05rem;
         }
 
-        .highlights-grid {
+        /* Portfolio Highlights Grid */
+        .portfolio-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
         }
 
-        .highlight-card {
+        .portfolio-card {
             background: var(--white);
             border-radius: 20px;
             padding: 2rem;
@@ -330,7 +333,7 @@
             transition: var(--transition);
         }
 
-        .highlight-card:hover {
+        .portfolio-card:hover {
             transform: translateY(-5px);
             box-shadow: var(--shadow-md);
             border-color: var(--primary-light);
@@ -345,17 +348,17 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.3rem;
-            margin-bottom: 1.2rem;
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
         }
 
-        .highlight-card h3 {
-            font-size: 1.2rem;
+        .portfolio-card h3 {
+            font-size: 1.3rem;
             font-weight: 700;
             margin-bottom: 0.8rem;
         }
 
-        .highlight-card p {
+        .portfolio-card p {
             color: var(--gray-600);
             font-size: 0.95rem;
             margin-bottom: 1.2rem;
@@ -376,6 +379,7 @@
             border-radius: 6px;
         }
 
+        /* Timeline Experience */
         .timeline {
             position: relative;
             padding-left: 2rem;
@@ -393,7 +397,7 @@
 
         .timeline-item {
             position: relative;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
         }
 
         .timeline-item::before {
@@ -470,6 +474,7 @@
             font-size: 0.8rem;
         }
 
+        /* Modern Skills Grid */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -510,6 +515,7 @@
             color: var(--dark);
         }
 
+        /* Education & Certifications */
         .grid-2 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -557,17 +563,18 @@
             margin-top: 2px;
         }
 
+        /* Contact Section Banner */
         .contact-banner {
             background: linear-gradient(135deg, var(--primary) 0%, #09343f 100%);
             border-radius: 24px;
-            padding: 3.5rem 2rem;
+            padding: 4rem 2rem;
             color: var(--white);
             text-align: center;
             box-shadow: var(--shadow-lg);
         }
 
         .contact-banner h2 {
-            font-size: 2.2rem;
+            font-size: 2.4rem;
             font-weight: 800;
             margin-bottom: 0.8rem;
         }
@@ -612,6 +619,7 @@
             margin-top: 2rem;
         }
 
+        /* Responsive */
         @media (max-width: 992px) {
             .hero {
                 grid-template-columns: 1fr;
@@ -650,6 +658,7 @@
 </head>
 <body>
 
+    <!-- Header / Navigation -->
     <header>
         <nav>
             <a href="#" class="brand-logo">
@@ -661,7 +670,7 @@
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#education">Education</a></li>
-                <li><a href="Resume.pdf" download class="btn-download"><i class="fa-solid fa-download"></i> Download Resume</a></li>
+                <li><a href="Resume.pdf" download class="btn-download"><i class="fa-solid fa-download"></i> Resume</a></li>
             </ul>
         </nav>
     </header>
@@ -671,10 +680,10 @@
         <section class="hero" id="about">
             <div class="hero-text">
                 <div class="badge-role">
-                    <i class="fa-solid fa-calculator"></i> ASSISTANT CHIEF ACCOUNTANT
+                    <i class="fa-solid fa-calculator"></i> SENIOR ACCOUNTANT
                 </div>
-                <h1>Financial Leadership & <span>Strategic Accounting</span></h1>
-                <p class="sub-title">12+ years of experience specializing in Odoo ERP, full-cycle financial reporting, cash flow optimization, and external audit management across Retail, Construction, and Banking industries[cite: 1].</p>
+                <h1>Strategic <span>Financial</span> Management & Accounting</h1>
+                <p class="sub-title">Expertise in Odoo ERP, Full-Cycle Accounting, Cash Flow Optimization & Audit Coordination across Retail, Construction & Banking sectors[cite: 1].</p>
                 
                 <div class="hero-stats">
                     <div class="stat-item">
@@ -683,17 +692,17 @@
                     </div>
                     <div class="stat-item">
                         <h3>800+</h3>
-                        <p>Monthly Invoices[cite: 1]</p>
+                        <p>Monthly Invoices Handled[cite: 1]</p>
                     </div>
                     <div class="stat-item">
                         <h3>4+</h3>
-                        <p>Junior Staff Managed[cite: 1]</p>
+                        <p>Industries Served[cite: 1]</p>
                     </div>
                 </div>
 
                 <div class="hero-buttons">
-                    <a href="#experience" class="btn btn-primary"><i class="fa-solid fa-briefcase"></i> View Experience</a>
-                    <a href="#contact" class="btn btn-outline"><i class="fa-solid fa-envelope"></i> Contact Me</a>
+                    <a href="#experience" class="btn btn-primary"><i class="fa-solid fa-briefcase"></i> Experience</a>
+                    <a href="#contact" class="btn btn-outline"><i class="fa-solid fa-envelope"></i> Get In Touch</a>
                     <a href="https://www.linkedin.com/in/ei-ei-aung-24044b273" target="_blank" class="btn btn-outline"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
                 </div>
             </div>
@@ -702,11 +711,10 @@
             <div class="profile-card">
                 <div class="profile-img-wrap">
                     <img src="profile.jpg" alt="Ei Ei Aung" class="profile-img">
-                    <div class="experience-badge">12+ Yrs Exp[cite: 1]</div>
+                    <div class="experience-badge">12+ Years Exp[cite: 1]</div>
                 </div>
                 <h2>Ms. Ei Ei Aung</h2>
-                <div class="designation">Assistant Chief Accountant</div>
-                <div class="sub-designation">Senior Accountant</div>
+                <p>Senior Accountant & Financial Specialist[cite: 1]</p>
 
                 <div class="info-pills">
                     <div class="info-pill">
@@ -722,18 +730,18 @@
             </div>
         </section>
 
-        <!-- Highlights Section -->
+        <!-- Professional Highlights -->
         <section id="highlights">
             <div class="section-header">
-                <h2>Professional Highlights</h2>
-                <p>Key financial competencies and management capabilities[cite: 1].</p>
+                <h2>Key Competencies & Highlights</h2>
+                <p>Core areas of expertise where I deliver measurable business value[cite: 1].</p>
             </div>
 
-            <div class="highlights-grid">
-                <div class="highlight-card">
+            <div class="portfolio-grid">
+                <div class="portfolio-card">
                     <div class="card-icon"><i class="fa-solid fa-chart-line"></i></div>
-                    <h3>ERP & Financial Reporting</h3>
-                    <p>Managing general ledger, journal entries, bank reconciliations, and financial reporting via Odoo ERP[cite: 1].</p>
+                    <h3>Financial Control & ERP</h3>
+                    <p>Experienced in full-cycle accounting, journal entries, GL management, and bank reconciliations leveraging Odoo ERP[cite: 1].</p>
                     <div class="tag-list">
                         <span class="tag">Odoo ERP</span>
                         <span class="tag">General Ledger</span>
@@ -741,38 +749,39 @@
                     </div>
                 </div>
 
-                <div class="highlight-card">
+                <div class="portfolio-card">
                     <div class="card-icon"><i class="fa-solid fa-boxes-packing"></i></div>
-                    <h3>Inventory & Stock Control</h3>
-                    <p>Executed inventory audits that strengthened control processes and significantly reduced stock variances[cite: 1].</p>
+                    <h3>Inventory & Cost Auditing</h3>
+                    <p>Proven track record in conducting inventory audits to enhance stock accuracy and minimize variances[cite: 1].</p>
                     <div class="tag-list">
                         <span class="tag">Inventory Audit</span>
-                        <span class="tag">Variance Control</span>
-                        <span class="tag">Cost Analysis</span>
+                        <span class="tag">Cost Control</span>
+                        <span class="tag">Variance Analysis</span>
                     </div>
                 </div>
 
-                <div class="highlight-card">
+                <div class="portfolio-card">
                     <div class="card-icon"><i class="fa-solid fa-file-invoice-dollar"></i></div>
                     <h3>Audit & Tax Compliance</h3>
-                    <p>Direct coordination with external auditors during annual audits and oversight of company tax filings[cite: 1].</p>
+                    <p>Skilled in direct coordination with external auditors for annual audits and managing full tax filing processes[cite: 1].</p>
                     <div class="tag-list">
+                        <span class="tag">Tax Compliance</span>
                         <span class="tag">External Audit</span>
-                        <span class="tag">Tax Filings</span>
-                        <span class="tag">Compliance</span>
+                        <span class="tag">Financial Statements</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Experience Timeline Section -->
+        <!-- Work Experience Timeline -->
         <section id="experience">
             <div class="section-header">
                 <h2>Work Experience</h2>
-                <p>Demonstrated progression and proven history in corporate financial roles[cite: 1].</p>
+                <p>A proven track record of leadership and detailed financial management[cite: 1].</p>
             </div>
 
             <div class="timeline">
+                <!-- Job 1 -->
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <div class="timeline-header">
@@ -785,15 +794,15 @@
                         <div class="timeline-body">
                             <ul>
                                 <li>Manage revenue & expense recognition in compliance with accounting standards using Odoo ERP[cite: 1].</li>
-                                <li>Monitor daily cash flow and deliver financial statements directly to the General Manager[cite: 1].</li>
-                                <li>Supervise and guide 4 junior accountants, ensuring operational accuracy[cite: 1].</li>
-                                <li>Conducted inventory audits improving stock accuracy and reducing variances[cite: 1].</li>
-                                <li>Coordinate annual external audits and handle official tax filing processes[cite: 1].</li>
+                                <li>Monitor daily cash flow and conduct financial analysis reported directly to General Manager[cite: 1].</li>
+                                <li>Supervise 4 junior accountants and coordinate annual external audits and tax filings[cite: 1].</li>
+                                <li>Led inventory audits that significantly improved stock accuracy and reduced control variances[cite: 1].</li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
+                <!-- Job 2 -->
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <div class="timeline-header">
@@ -805,13 +814,14 @@
                         </div>
                         <div class="timeline-body">
                             <ul>
-                                <li>Generated 800+ monthly invoices and account statements using ERP system[cite: 1].</li>
-                                <li>Reconciled sales and inventory balances while actively managing AR overdue collections[cite: 1].</li>
+                                <li>Generated 800+ monthly invoices and account statements via ERP system[cite: 1].</li>
+                                <li>Reconciled sales and inventory balances while monitoring AR overdue accounts to boost collections[cite: 1].</li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
+                <!-- Job 3 -->
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <div class="timeline-header">
@@ -823,13 +833,14 @@
                         </div>
                         <div class="timeline-body">
                             <ul>
-                                <li>Analyzed revenue projections and monitored site expenses against project budgets[cite: 1].</li>
-                                <li>Verified contractor/subcontractor payment claims and prepared general ledger balance sheets[cite: 1].</li>
+                                <li>Analyzed revenue projections and monitored construction site expenses against budgets[cite: 1].</li>
+                                <li>Verified subcontractor payment claims and managed GL, AP, AR, and cash transactions[cite: 1].</li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
+                <!-- Job 4 -->
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <div class="timeline-header">
@@ -841,8 +852,8 @@
                         </div>
                         <div class="timeline-body">
                             <ul>
-                                <li>Processed daily invoices, cash transactions, and card services (MPU, Visa, Mastercard)[cite: 1].</li>
-                                <li>Supervised 3 junior staff and prepared monthly balance sheets and financial reports[cite: 1].</li>
+                                <li>Verified daily transaction accuracy, managed card services (MPU, Visa, Mastercard)[cite: 1].</li>
+                                <li>Prepared monthly balance sheets and supervised 3 junior team members[cite: 1].</li>
                             </ul>
                         </div>
                     </div>
@@ -850,16 +861,16 @@
             </div>
         </section>
 
-        <!-- Skills Section -->
+        <!-- Technical & Soft Skills -->
         <section id="skills">
             <div class="section-header">
-                <h2>Skills & Competencies</h2>
-                <p>Comprehensive skillset built across technical accounting and leadership[cite: 1].</p>
+                <h2>Professional Skills</h2>
+                <p>A balanced combination of accounting expertise, tools, and soft skills[cite: 1].</p>
             </div>
 
             <div class="skills-grid">
                 <div class="skill-card">
-                    <h3><i class="fa-solid fa-file-invoice"></i> Accounting Expertise</h3>
+                    <h3><i class="fa-solid fa-file-invoice"></i> Core Accounting</h3>
                     <div class="skill-tags">
                         <span class="skill-pill">Management Accounting[cite: 1]</span>
                         <span class="skill-pill">Financial Reporting[cite: 1]</span>
@@ -871,28 +882,28 @@
                 </div>
 
                 <div class="skill-card">
-                    <h3><i class="fa-solid fa-desktop"></i> Software & Tools</h3>
+                    <h3><i class="fa-solid fa-desktop"></i> Software & ERP</h3>
                     <div class="skill-tags">
                         <span class="skill-pill">Odoo ERP[cite: 1]</span>
                         <span class="skill-pill">QuickBooks[cite: 1]</span>
                         <span class="skill-pill">MYOB[cite: 1]</span>
-                        <span class="skill-pill">Microsoft Excel & Word[cite: 1]</span>
+                        <span class="skill-pill">MS Excel & Word[cite: 1]</span>
                     </div>
                 </div>
 
                 <div class="skill-card">
-                    <h3><i class="fa-solid fa-users"></i> Soft Skills & Leadership</h3>
+                    <h3><i class="fa-solid fa-users"></i> Leadership & Mindset</h3>
                     <div class="skill-tags">
-                        <span class="skill-pill">Staff Supervision[cite: 1]</span>
-                        <span class="skill-pill">Critical Thinking[cite: 1]</span>
+                        <span class="skill-pill">Team Supervision[cite: 1]</span>
                         <span class="skill-pill">Problem Solving[cite: 1]</span>
-                        <span class="skill-pill">Team Collaboration[cite: 1]</span>
+                        <span class="skill-pill">Critical Thinking[cite: 1]</span>
+                        <span class="skill-pill">Growth Mindset[cite: 1]</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Education & Certifications Section -->
+        <!-- Education & Certifications -->
         <section id="education">
             <div class="grid-2">
                 <div class="edu-card">
@@ -916,7 +927,7 @@
                 </div>
 
                 <div class="edu-card">
-                    <h3><i class="fa-solid fa-certificate"></i> Training & Certifications</h3>
+                    <h3><i class="fa-solid fa-certificate"></i> Certifications</h3>
                     <div class="edu-item">
                         <div class="edu-title">Dip IFR</div>
                         <div class="edu-meta">Teacher Pan Ei Accounting & Finance (2026)[cite: 1]</div>
@@ -927,20 +938,20 @@
                     </div>
                     <div class="edu-item">
                         <div class="edu-title">Computerized Accounting (MYOB & Excel)</div>
-                        <div class="edu-meta">Khin Maung Htwe & Kyaw Swar Win Centers[cite: 1]</div>
+                        <div class="edu-meta">Khin Maung Htwe & Kyaw Swar Win Training Centers[cite: 1]</div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Contact Banner -->
+        <!-- Contact Section -->
         <section id="contact">
             <div class="contact-banner">
-                <h2>Get In Touch</h2>
-                <p>Feel free to reach out for executive opportunities or financial consulting inquiries[cite: 1].</p>
+                <h2>Let's Work Together</h2>
+                <p>Open for opportunities and discussions regarding accounting, financial management, or leadership roles[cite: 1].</p>
                 <div class="contact-links">
                     <a href="tel:+959797331084" class="contact-btn"><i class="fa-solid fa-phone"></i> +959797331084</a>[cite: 1]
-                    <a href="mailto:eieiaung.1804@gmail.com" class="contact-btn"><i class="fa-solid fa-envelope"></i> eieiaung.1804@gmail.com</a>[cite: 1]
+                    <a href="mailto:eieiaung.1804@gmail.com" class="contact-btn"><i class="fa-solid fa-envelope"></i> Email Me</a>[cite: 1]
                     <a href="https://www.linkedin.com/in/ei-ei-aung-24044b273" target="_blank" class="contact-btn"><i class="fa-brands fa-linkedin"></i> LinkedIn Profile</a>[cite: 1]
                 </div>
             </div>
