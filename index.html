@@ -3,245 +3,718 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ei Ei Aung | Accountant Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Ei Ei Aung | Professional Portfolio</title>
+    <style>
+        :root {
+            --primary-color: #0d5c58;
+            --primary-hover: #083c39;
+            --bg-color: #f2f7f6;
+            --card-bg: #ffffff;
+            --text-main: #212529;
+            --text-muted: #555555;
+            --border-color: #e0e0e0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        header {
+            position: sticky;
+            top: 0;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .brand-name {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--text-main);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            background-color: #e2f0ee;
+            color: var(--primary-color);
+        }
+
+        .btn-download {
+            background-color: var(--primary-color);
+            color: #ffffff !important;
+            padding: 0.5rem 1.2rem !important;
+            border-radius: 6px !important;
+        }
+
+        .btn-download:hover {
+            background-color: var(--primary-hover) !important;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 3rem;
+            padding: 3rem 0;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .tagline {
+            display: inline-block;
+            background-color: #dcece9;
+            color: var(--primary-color);
+            font-size: 0.85rem;
+            font-weight: 700;
+            padding: 0.3rem 0.8rem;
+            border-radius: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        .hero-text h1 {
+            font-size: 2.8rem;
+            line-height: 1.2;
+            color: #1a202c;
+            margin-bottom: 1rem;
+        }
+
+        .sub-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: 1.2rem;
+        }
+
+        .summary-text {
+            color: #4a5568;
+            margin-bottom: 1.8rem;
+            max-width: 600px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: #ffffff;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+        }
+
+        .btn-outline {
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            background-color: transparent;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: #ffffff;
+        }
+
+        .hero-image-container {
+            flex: 0 0 320px;
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 260px;
+            height: 260px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 6px solid #d0e4e0;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .hero-card-info {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            text-align: left;
+        }
+
+        .hero-card-info h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .hero-card-info p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Section Layouts */
+        section {
+            padding: 4rem 0;
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            color: #1a202c;
+        }
+
+        .about-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        /* Experience Timeline */
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .timeline-item {
+            background-color: var(--card-bg);
+            padding: 1.8rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.8rem;
+            flex-wrap: wrap;
+        }
+
+        .role-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .company-name {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .date-location {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-align: right;
+        }
+
+        .timeline-body ul {
+            padding-left: 1.2rem;
+            color: #4a5568;
+        }
+
+        .timeline-body li {
+            margin-bottom: 0.4rem;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skills-category h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid #e2f0ee;
+            padding-bottom: 0.4rem;
+        }
+
+        .skills-list {
+            list-style: none;
+        }
+
+        .skills-list li {
+            background-color: var(--card-bg);
+            padding: 0.6rem 1rem;
+            margin-bottom: 0.5rem;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+            font-weight: 5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .skills-list li::before {
+            content: "•";
+            color: var(--primary-color);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+        }
+
+        /* Education & Certs */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .item-box {
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        .item-box:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .item-title {
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .item-sub {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        .contact-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .contact-item a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: #ffffff;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            .hero-text {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .timeline-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .date-location {
+                text-align: left;
+                margin-top: 0.3rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body>
 
-<header>
-    <nav>
-        <div class="logo">EI EI AUNG</div>
-
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-
-        <a href="Resume.pdf" class="btn" download>
-            Download Resume
-        </a>
-    </nav>
-</header>
-
-<section class="hero">
-    <div class="hero-text">
-        <p class="subtitle">ASSISTANT CHIEF ACCOUNTANT</p>
-
-        <h1>Ei Ei Aung</h1>
-
-        <h2>Accountant with 12+ Years of Experience</h2>
-
-        <p class="hero-desc">
-            Accounting professional with over 12 years of experience in financial reporting, full-cycle accounting, cash flow management, and audit coordination across retail, trading, construction, and banking industries[cite: 2]. Experienced in using accounting software including Odoo, MYOB and QuickBooks[cite: 2].
-        </p>
-
-        <div class="hero-buttons">
-            <a href="#contact" class="btn">Contact Me</a>
-            <a href="https://www.linkedin.com/in/ei-ei-aung-24044b273" target="_blank" class="btn-outline">
-               LinkedIn
-            </a>
-        </div>
-
-        <!-- Space-filling Highlights Box -->
-        <div class="hero-highlights">
-            <div class="highlight-item">
-                <h3>12+</h3>
-                <p>Years Experience</p>
-            </div>
-            <div class="highlight-item">
-                <h3>4+</h3>
-                <p>Industries Covered</p>
-            </div>
-            <div class="highlight-item">
-                <h3>ERP</h3>
-                <p>Odoo, MYOB, QuickBooks</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="hero-sidebar">
-        <div class="profile-card">
-            <div class="image-wrapper">
-                <img src="profile.jpg" alt="Ei Ei Aung" class="profile-img">
-            </div>
-            <h3 class="profile-name">Ei Ei Aung</h3>
-            <p class="profile-subtitle">
-                Assistant Chief Accountant • Financial Reporting • Cash Flow Management • Audit Coordination[cite: 2]
-            </p>
-        </div>
-
-        <div class="hero-card">
-            <h3>Professional Focus</h3>
-            <ul>
-                <li>Financial Reporting[cite: 2]</li>
-                <li>Cash Flow Management[cite: 2]</li>
-                <li>Audit Coordination[cite: 2]</li>
-                <li>General Ledger[cite: 2]</li>
-                <li>AP / AR Management[cite: 2]</li>
-                <li>ERP Accounting Systems[cite: 2]</li>
+    <!-- Header / Navigation -->
+    <header>
+        <nav>
+            <div class="brand-name">Ei Ei Aung</div>
+            <ul class="nav-links">
+                <li><a href="#about" class="active">About Me</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact Me</a></li>
+                <li><a href="Resume.pdf" download class="btn-download">Download Resume</a></li>
             </ul>
-        </div>
-    </div>
-</section>
+        </nav>
+    </header>
 
-<section id="about">
-    <h2>About Me</h2>
-    <p>
-        I began my accounting career in 2014 and progressed to Senior Accountant and Assistant Chief Accountant roles[cite: 2]. My background covers retail, trading, construction, and banking industries[cite: 2]. I specialize in financial reporting, cash flow management, budgeting, audit support, and accounting systems including Odoo ERP, QuickBooks, and MYOB[cite: 2].
-    </p>
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-text">
+                <span class="tagline">Accountant</span>
+                <h1>Financial Management & Accounting Professional</h1>
+                <div class="sub-title">Senior Accountant • Odoo ERP • Financial Reporting • Audit Coordination</div>
+                <p class="summary-text">
+                    Accounting professional with over 12 years of experience in financial reporting, full-cycle accounting, cash flow management, and audit coordination across retail, trading, construction, and banking industries[cite: 1].
+                </p>
+                <div class="hero-buttons">
+                    <a href="#experience" class="btn btn-primary">View Experience</a>
+                    <a href="mailto:eieiaung.1804@gmail.com" class="btn btn-outline">Email Me</a>
+                    <a href="https://www.linkedin.com/in/ei-ei-aung-24044b273" target="_blank" class="btn btn-outline">LinkedIn</a>
+                </div>
+            </div>
 
-    <div class="about-grid">
-        <div class="card">
-            <h3>Financial & Accounting Operations</h3>
+            <div class="hero-image-container">
+                <img src="profile.jpg" alt="Ei Ei Aung" class="profile-img">
+                <div class="hero-card-info">
+                    <h3>Professional Focus</h3>
+                    <p>Financial Analysis, General Ledger management, Cash Flow Monitoring, ERP Implementation, and Tax Compliance[cite: 1].</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about">
+            <h2 class="section-title">About Me</h2>
             <p>
-                Managing full-cycle accounting, general ledger maintenance, journal entries, bank reconciliation, revenue and expense recognition in compliance with accounting standards[cite: 2].
+                Accounting professional with over 12 years of experience in financial reporting, full-cycle accounting, cash flow management, and audit coordination across retail, trading, construction, and banking industries[cite: 1]. Experienced in using accounting software including Odoo, MYOB, and QuickBooks[cite: 1]. Provides reliable financial insights to support daily business decisions and operational efficiency[cite: 1].
             </p>
-        </div>
+            <div class="about-cards">
+                <div class="card">
+                    <h3>Financial Operations</h3>
+                    <p>Expertise in managing general ledgers, revenue & expense recognition, daily cash flow monitoring, and preparing financial statements for management review[cite: 1].</p>
+                </div>
+                <div class="card">
+                    <h3>Audit & Compliance</h3>
+                    <p>Strong background in inventory auditing, tax filing processes, and coordinating seamlessly with external auditors during annual audits[cite: 1].</p>
+                </div>
+            </div>
+        </section>
 
-        <div class="card">
-            <h3>Audit, Tax & Management Reporting</h3>
-            <p>
-                Conducting inventory audits, financial analysis, direct reporting to General Managers, coordinating with external auditors, and managing tax compliance[cite: 2].
-            </p>
-        </div>
+        <!-- Experience Section -->
+        <section id="experience">
+            <h2 class="section-title">Work Experience</h2>
+            <div class="timeline">
+
+                <!-- Job 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <div>
+                            <div class="role-title">Assistant Chief Accountant / Senior Accountant</div>
+                            <div class="company-name">Choice Mart Company Limited</div>
+                        </div>
+                        <div class="date-location">
+                            May 2023 - Present<br>Mandalay, Myanmar[cite: 1]
+                        </div>
+                    </div>
+                    <div class="timeline-body">
+                        <ul>
+                            <li>Manage revenue and expense recognition in compliance with accounting standards and company policies[cite: 1].</li>
+                            <li>Maintain financial reporting, general ledger, bank reconciliation, and journal entries using Odoo ERP[cite: 1].</li>
+                            <li>Monitor daily cash flow to support timely financial planning and operational decisions[cite: 1].</li>
+                            <li>Provide guidance and supervision to 4 junior accountants, ensuring accuracy in daily accounting operations[cite: 1].</li>
+                            <li>Conducted inventory audits that improved stock accuracy, strengthened inventory control processes, and reduced variances[cite: 1].</li>
+                            <li>Perform financial analysis, organize financial statements, and report directly to the General Manager[cite: 1].</li>
+                            <li>Coordinate with external auditors during annual audits and handle tax filing processes[cite: 1].</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Job 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <div>
+                            <div class="role-title">AR Accountant cum Sales Admin</div>
+                            <div class="company-name">You And Me Solution Group</div>
+                        </div>
+                        <div class="date-location">
+                            Jun 2021 - Apr 2023<br>Mandalay, Myanmar[cite: 1]
+                        </div>
+                    </div>
+                    <div class="timeline-body">
+                        <ul>
+                            <li>Managed sales orders using an ERP system[cite: 1].</li>
+                            <li>Generated over 800 invoices and monthly account statements, ensuring timely billing and documentation[cite: 1].</li>
+                            <li>Checked and reconciled sales and inventory balances[cite: 1].</li>
+                            <li>Maintained AR ledgers and monitored AR overdue balances[cite: 1].</li>
+                            <li>Arranged monthly AR overdue reports to support timely collection follow-ups[cite: 1].</li>
+                            <li>Recorded daily transactions and reported to the Chief Accountant[cite: 1].</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Job 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <div>
+                            <div class="role-title">Senior Accountant</div>
+                            <div class="company-name">Footstone Construction</div>
+                        </div>
+                        <div class="date-location">
+                            Sep 2017 - May 2021<br>Mandalay, Myanmar[cite: 1]
+                        </div>
+                    </div>
+                    <div class="timeline-body">
+                        <ul>
+                            <li>Analyzed revenue projections and monitored project costs against budgets[cite: 1].</li>
+                            <li>Supervised construction site expenses and verified contractor/subcontractor payment claims[cite: 1].</li>
+                            <li>Handled inventory, accounts receivable, accounts payable, bank reconciliation, and periodic accounting reports[cite: 1].</li>
+                            <li>Controlled daily cash transactions and presented financial status to management[cite: 1].</li>
+                            <li>Coordinated with project managers on budgeting, cost estimates, and expense planning[cite: 1].</li>
+                            <li>Prepared general ledger accounts and financial statements, including balance sheets[cite: 1].</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Job 4 -->
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <div>
+                            <div class="role-title">Senior Assistant / Junior Assistant</div>
+                            <div class="company-name">KBZ Bank</div>
+                        </div>
+                        <div class="date-location">
+                            Jan 2014 - Aug 2017<br>Mandalay, Myanmar[cite: 1]
+                        </div>
+                    </div>
+                    <div class="timeline-body">
+                        <ul>
+                            <li>Verified and processed daily invoices, cash transactions, and business expenses[cite: 1].</li>
+                            <li>Managed account openings, cash deposits/withdrawals, and MPU, Visa, and Mastercard services[cite: 1].</li>
+                            <li>Supported 3 junior staff, assisted in accounting duties, and reported financial results to the Branch Manager[cite: 1].</li>
+                            <li>Maintained general ledgers and prepared monthly balance sheets, quarterly, and yearly financial reports[cite: 1].</li>
+                            <li>Reviewed bank charges, interest rates, and loan fees, ensuring correct application[cite: 1].</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2 class="section-title">Skills & Proficiencies</h2>
+            <div class="skills-grid">
+                <div class="skills-category">
+                    <h3>Hard Skills</h3>
+                    <ul class="skills-list">
+                        <li>Management Accounting[cite: 1]</li>
+                        <li>Financial Reporting[cite: 1]</li>
+                        <li>General Ledger (GL)[cite: 1]</li>
+                        <li>Cash Flow Management[cite: 1]</li>
+                        <li>Inventory Control[cite: 1]</li>
+                        <li>Accounts Payable & Receivable[cite: 1]</li>
+                        <li>Tax Compliance[cite: 1]</li>
+                    </ul>
+                </div>
+                <div class="skills-category">
+                    <h3>Software & Tools</h3>
+                    <ul class="skills-list">
+                        <li>Odoo ERP[cite: 1]</li>
+                        <li>MYOB[cite: 1]</li>
+                        <li>QuickBooks[cite: 1]</li>
+                        <li>Microsoft Excel & Office[cite: 1]</li>
+                        <li>Computerized Accounting[cite: 1]</li>
+                    </ul>
+                </div>
+                <div class="skills-category">
+                    <h3>Soft Skills</h3>
+                    <ul class="skills-list">
+                        <li>Leadership & Supervision[cite: 1]</li>
+                        <li>Critical Thinking[cite: 1]</li>
+                        <li>Problem-solving[cite: 1]</li>
+                        <li>Team Collaboration[cite: 1]</li>
+                        <li>Time Management[cite: 1]</li>
+                        <li>Growth Mindset[cite: 1]</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education & Certifications Section -->
+        <section id="education">
+            <h2 class="section-title">Education & Training</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3 style="margin-bottom: 1.5rem;">Education</h3>
+                    <div class="item-box">
+                        <div class="item-title">Management Accounting (ACCA, Part I)</div>
+                        <div class="item-sub">2019[cite: 1]</div>
+                    </div>
+                    <div class="item-box">
+                        <div class="item-title">Diploma in Accounting & Finance (LCCI Level 3)</div>
+                        <div class="item-sub">2018[cite: 1]</div>
+                    </div>
+                    <div class="item-box">
+                        <div class="item-title">Postgraduate Diploma in English</div>
+                        <div class="item-sub">MUFL University - 2017[cite: 1]</div>
+                    </div>
+                    <div class="item-box">
+                        <div class="item-title">B.Sc. (Mathematics) (Hons)</div>
+                        <div class="item-sub">Yadanarbon University - 2014[cite: 1]</div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 style="margin-bottom: 1.5rem;">Training & Certifications</h3>
+                    <div class="item-box">
+                        <div class="item-title">Dip IFR</div>
+                        <div class="item-sub">Teacher Pan Ei Accounting and Finance (2026)[cite: 1]</div>
+                    </div>
+                    <div class="item-box">
+                        <div class="item-title">AB (F1), MA (F2), FA (F3) (ACCA Part-1)</div>
+                        <div class="item-sub">Nay Linn Aung Finance and Accountancy Academy (2019)[cite: 1]</div>
+                    </div>
+                    <div class="item-box">
+                        <div class="item-title">LCCI Level 3 & Computerized Accounting with Excel</div>
+                        <div class="item-sub">Khin Maung Htwe LCCI (UK) Training Center (2018)[cite: 1]</div>
+                    </div>
+                    <div class="item-box">
+                        <div class="item-title">Level 3 Certificate in Computerized Accounting (MYOB)</div>
+                        <div class="item-sub">Kyaw Swar Win Training Center (2012)[cite: 1]</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="contact-card">
+                <h2 style="font-size: 2rem; color: #1a202c; margin-bottom: 0.5rem;">Get In Touch</h2>
+                <p style="color: var(--text-muted);">Feel free to reach out for professional opportunities or inquiries.</p>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span style="font-size: 0.85rem; color: var(--text-muted);">Phone / WhatsApp</span>
+                        <a href="tel:+959797331084">+959797331084</a>[cite: 1]
+                    </div>
+                    <div class="contact-item">
+                        <span style="font-size: 0.85rem; color: var(--text-muted);">Email</span>
+                        <a href="mailto:eieiaung.1804@gmail.com">eieiaung.1804@gmail.com</a>[cite: 1]
+                    </div>
+                    <div class="contact-item">
+                        <span style="font-size: 0.85rem; color: var(--text-muted);">LinkedIn</span>
+                        <a href="https://www.linkedin.com/in/ei-ei-aung-24044b273" target="_blank">Ei Ei Aung</a>[cite: 1]
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
-</section>
 
-<section id="experience">
-    <h2>Work Experience</h2>
+    <footer>
+        <p>&copy; 2026 Ei Ei Aung. All rights reserved.</p>
+    </footer>
 
-    <div class="card">
-        <h3>Choice Mart Company Limited</h3>
-        <p><strong>Assistant Chief Accountant</strong> (May 2024 - Present)[cite: 2]</p>
-        <p><strong>Senior Accountant</strong> (May 2023 - Apr 2024)[cite: 2]</p>
-        <ul>
-            <li>Manage revenue and expense recognition in compliance with accounting standards and company policies[cite: 2].</li>
-            <li>Maintain financial reporting, general ledger, bank reconciliation, and journal entries using Odoo ERP[cite: 2].</li>
-            <li>Monitor daily cash flow to support timely financial planning and operational decisions[cite: 2].</li>
-            <li>Provide guidance and supervision to 4 junior accountants, ensuring accuracy in daily accounting operations[cite: 2].</li>
-            <li>Conducted inventory audits that improved stock accuracy, strengthened inventory control, and reduced variances[cite: 2].</li>
-            <li>Coordinate with external auditors during annual audits and handle tax filing processes[cite: 2].</li>
-        </ul>
-    </div>
-
-    <div class="card">
-        <h3>You And Me Solution Group</h3>
-        <p><strong>AR Accountant cum Sales Admin</strong> (Jun 2021 - Apr 2023)[cite: 2]</p>
-        <ul>
-            <li>Managed sales orders using an ERP system and generated over 800 invoices and monthly account statements[cite: 2].</li>
-            <li>Checked and reconciled sales and inventory balances, maintained AR ledgers, and monitored overdue balances[cite: 2].</li>
-            <li>Prepared monthly AR overdue reports to support timely collection follow-ups[cite: 2].</li>
-        </ul>
-    </div>
-
-    <div class="card">
-        <h3>Footstone Construction</h3>
-        <p><strong>Senior Accountant</strong> (Sep 2017 - May 2021)[cite: 2]</p>
-        <ul>
-            <li>Analyzed revenue projections, monitored project costs against budgets, and supervised construction site expenses[cite: 2].</li>
-            <li>Verified contractor and subcontractor payment claims and managed AP/AR, bank reconciliations, and inventory[cite: 2].</li>
-            <li>Prepared general ledger accounts and financial statements, including balance sheets[cite: 2].</li>
-        </ul>
-    </div>
-
-    <div class="card">
-        <h3>KBZ Bank</h3>
-        <p><strong>Senior Assistant</strong> (Nov 2015 - Aug 2017)[cite: 2]</p>
-        <p><strong>Junior Assistant</strong> (Jan 2014 - Oct 2015)[cite: 2]</p>
-        <ul>
-            <li>Verified and processed daily invoices, cash transactions, and business expenses[cite: 2].</li>
-            <li>Managed account openings, cash deposits/withdrawals, and MPU, Visa, and Mastercard services[cite: 2].</li>
-            <li>Supported 3 junior staff, maintained general ledgers, and prepared monthly balance sheets and financial reports[cite: 2].</li>
-        </ul>
-    </div>
-</section>
-
-<section id="skills">
-    <h2>Skills & Competencies</h2>
-
-    <h3>Hard Skills</h3>
-    <div class="skills-grid">
-        <span>Financial Reporting</span>
-        <span>Management Accounting</span>
-        <span>General Ledger (GL)</span>
-        <span>Cash Flow Management</span>
-        <span>Inventory Control</span>
-        <span>Accounts Payable (AP)</span>
-        <span>Accounts Receivable (AR)</span>
-        <span>Tax Compliance</span>
-        <span>Odoo ERP</span>
-        <span>QuickBooks</span>
-        <span>MYOB</span>
-        <span>Microsoft Excel</span>
-    </div>
-
-    <h3 style="margin-top: 30px;">Soft Skills</h3>
-    <div class="skills-grid">
-        <span>Team Collaboration</span>
-        <span>Time Management</span>
-        <span>Flexibility</span>
-        <span>Growth Mindset</span>
-        <span>Critical Thinking</span>
-        <span>Problem Solving</span>
-        <span>Leadership</span>
-    </div>
-</section>
-
-<section id="education">
-    <h2>Education & Certifications</h2>
-
-    <div class="card">
-        <h3>ACCA Part I (Management Accounting)</h3>
-        <p>Nay Linn Aung Finance and Accountancy Academy (2019)[cite: 2]</p>
-    </div>
-
-    <div class="card">
-        <h3>Diploma in Accounting & Finance (LCCI Level 3)</h3>
-        <p>Khin Maung Htwe LCCI (UK) Training Center (2018)[cite: 2]</p>
-    </div>
-
-    <div class="card">
-        <h3>Postgraduate Diploma in English</h3>
-        <p>MUFL University (2017)[cite: 2]</p>
-    </div>
-
-    <div class="card">
-        <h3>B.Sc. (Mathematics) (Hons)</h3>
-        <p>Yadanarbon University (2014)[cite: 2]</p>
-    </div>
-
-    <div class="card">
-        <h3>Dip IFR</h3>
-        <p>Teacher Pan Ei Accounting and Finance (In Progress - 2026)[cite: 2]</p>
-    </div>
-
-    <div class="card">
-        <h3>Level 3 Certificate in Computerized Accounting (MYOB)</h3>
-        <p>Kyaw Swar Win Training Center (2012)[cite: 2]</p>
-    </div>
-</section>
-
-<section id="contact">
-    <h2>Contact</h2>
-
-    <p>Email: eieiaung.1804@gmail.com[cite: 2]</p>
-    <p>Phone / WhatsApp: +95 9797331084[cite: 2]</p>
-    <p>Location: Mandalay, Myanmar[cite: 2]</p>
-
-    <br>
-    <a href="https://www.linkedin.com/in/ei-ei-aung-24044b273" target="_blank" class="btn">
-       View LinkedIn
-    </a>
-</section>
-
-<footer>
-    <p>© 2026 Ei Ei Aung. All Rights Reserved.</p>
-</footer>
-
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
