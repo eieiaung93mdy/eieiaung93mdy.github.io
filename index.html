@@ -3,38 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ei Ei Aung | Professional Portfolio</title>
+    <title>Ei Ei Aung | Assistant Chief Accountant</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
         :root {
-            --primary-color: #0d5c58;
-            --primary-hover: #083c39;
-            --bg-color: #f2f7f6;
-            --card-bg: #ffffff;
-            --text-main: #212529;
-            --text-muted: #555555;
-            --border-color: #e0e0e0;
+            --primary: #0f4c5c;
+            --primary-light: #e6f0f2;
+            --secondary: #e36414;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --white: #ffffff;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-600: #475569;
+            --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.04);
+            --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.08);
+            --shadow-lg: 0 16px 32px rgba(15, 23, 42, 0.12);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             scroll-behavior: smooth;
         }
 
         body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.6;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.7;
+            overflow-x: hidden;
         }
 
-        /* Navigation */
         header {
             position: sticky;
             top: 0;
-            background-color: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--gray-200);
             z-index: 1000;
         }
 
@@ -44,371 +54,577 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 2rem;
+            padding: 1.2rem 2rem;
         }
 
-        .brand-name {
-            font-size: 1.4rem;
+        .brand-logo {
+            font-size: 1.3rem;
             font-weight: 800;
-            color: var(--text-main);
-            letter-spacing: 1px;
-            text-transform: uppercase;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .brand-logo span {
+            background: var(--primary);
+            color: var(--white);
+            padding: 4px 10px;
+            border-radius: 8px;
+            font-size: 0.95rem;
         }
 
         .nav-links {
             display: flex;
-            gap: 1.2rem;
+            gap: 1.5rem;
             list-style: none;
             align-items: center;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: var(--text-main);
+            color: var(--gray-600);
             font-weight: 600;
             font-size: 0.95rem;
-            padding: 0.4rem 0.8rem;
-            border-radius: 20px;
-            transition: all 0.3s ease;
+            transition: var(--transition);
         }
 
-        .nav-links a:hover, .nav-links a.active {
-            background-color: #e2f0ee;
-            color: var(--primary-color);
+        .nav-links a:hover {
+            color: var(--primary);
         }
 
         .btn-download {
-            background-color: var(--primary-color);
-            color: #ffffff !important;
-            padding: 0.5rem 1.2rem !important;
-            border-radius: 6px !important;
+            background: var(--primary);
+            color: var(--white) !important;
+            padding: 0.6rem 1.4rem !important;
+            border-radius: 30px !important;
+            box-shadow: 0 4px 12px rgba(15, 76, 92, 0.2);
         }
 
         .btn-download:hover {
-            background-color: var(--primary-hover) !important;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(15, 76, 92, 0.3);
         }
 
-        /* Main Container */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 2rem;
         }
 
-        /* Hero Section */
         .hero {
-            display: flex;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 4rem;
             align-items: center;
-            justify-content: space-between;
-            gap: 3rem;
-            padding: 3rem 0;
+            padding: 4rem 0;
         }
 
-        .hero-text {
-            flex: 1;
-        }
-
-        .tagline {
-            display: inline-block;
-            background-color: #dcece9;
-            color: var(--primary-color);
-            font-size: 0.85rem;
-            font-weight: 700;
-            padding: 0.3rem 0.8rem;
-            border-radius: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 1rem;
+        .badge-role {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--primary-light);
+            color: var(--primary);
+            font-size: 0.95rem;
+            font-weight: 800;
+            padding: 0.5rem 1.2rem;
+            border-radius: 30px;
+            letter-spacing: 0.5px;
+            margin-bottom: 1.5rem;
         }
 
         .hero-text h1 {
-            font-size: 2.8rem;
-            line-height: 1.2;
-            color: #1a202c;
+            font-size: 3rem;
+            line-height: 1.15;
+            font-weight: 800;
+            color: var(--dark);
             margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+
+        .hero-text h1 span {
+            color: var(--primary);
         }
 
         .sub-title {
             font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--text-muted);
-            margin-bottom: 1.2rem;
+            color: var(--gray-600);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
         }
 
-        .summary-text {
-            color: #4a5568;
-            margin-bottom: 1.8rem;
-            max-width: 600px;
+        .hero-stats {
+            display: flex;
+            gap: 2rem;
+            margin: 2rem 0;
+            padding: 1.5rem 0;
+            border-top: 1px solid var(--gray-200);
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .stat-item h3 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .stat-item p {
+            font-size: 0.85rem;
+            color: var(--gray-600);
+            font-weight: 600;
         }
 
         .hero-buttons {
             display: flex;
             gap: 1rem;
+            flex-wrap: wrap;
         }
 
         .btn {
-            display: inline-block;
-            padding: 0.75rem 1.5rem;
-            border-radius: 6px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0.8rem 1.8rem;
+            border-radius: 12px;
             text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
+            font-weight: 700;
+            transition: var(--transition);
         }
 
         .btn-primary {
-            background-color: var(--primary-color);
-            color: #ffffff;
+            background: var(--primary);
+            color: var(--white);
         }
 
         .btn-primary:hover {
-            background-color: var(--primary-hover);
+            background: #09343f;
+            transform: translateY(-2px);
         }
 
         .btn-outline {
-            border: 1px solid var(--primary-color);
-            color: var(--primary-color);
-            background-color: transparent;
+            border: 2px solid var(--gray-200);
+            color: var(--dark);
+            background: var(--white);
         }
 
         .btn-outline:hover {
-            background-color: var(--primary-color);
-            color: #ffffff;
+            border-color: var(--primary);
+            color: var(--primary);
         }
 
-        .hero-image-container {
-            flex: 0 0 320px;
+        .profile-card {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 2rem;
+            box-shadow: var(--shadow-lg);
             text-align: center;
+            border: 1px solid var(--gray-100);
+        }
+
+        .profile-img-wrap {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 1.5rem;
         }
 
         .profile-img {
-            width: 260px;
-            height: 260px;
+            width: 100%;
+            height: 100%;
             border-radius: 50%;
             object-fit: cover;
-            border: 6px solid #d0e4e0;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border: 6px solid var(--primary-light);
         }
 
-        .hero-card-info {
-            background-color: var(--card-bg);
-            border-radius: 12px;
-            padding: 1.5rem;
-            margin-top: 1.5rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-            text-align: left;
+        .experience-badge {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background: var(--secondary);
+            color: var(--white);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            box-shadow: 0 4px 10px rgba(227, 100, 20, 0.3);
         }
 
-        .hero-card-info h3 {
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-            color: var(--primary-color);
+        .profile-card h2 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 0.3rem;
         }
 
-        .hero-card-info p {
-            font-size: 0.9rem;
-            color: var(--text-muted);
+        .profile-card .designation {
+            color: var(--primary);
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 0.2rem;
         }
 
-        /* Section Layouts */
-        section {
-            padding: 4rem 0;
-            border-top: 1px solid rgba(0,0,0,0.05);
-        }
-
-        .section-title {
-            font-size: 2.2rem;
+        .profile-card .sub-designation {
+            color: var(--gray-600);
+            font-size: 0.85rem;
             margin-bottom: 1.5rem;
-            color: #1a202c;
+            font-weight: 600;
         }
 
-        .about-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-
-        .card {
-            background-color: var(--card-bg);
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-            border: 1px solid rgba(0,0,0,0.03);
-        }
-
-        .card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            color: var(--primary-color);
-        }
-
-        /* Experience Timeline */
-        .timeline {
+        .info-pills {
             display: flex;
             flex-direction: column;
+            gap: 0.8rem;
+            text-align: left;
+            background: var(--light);
+            padding: 1.2rem;
+            border-radius: 16px;
+        }
+
+        .info-pill {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.88rem;
+            color: var(--gray-600);
+        }
+
+        .info-pill i {
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+
+        section {
+            padding: 4rem 0;
+        }
+
+        .section-header {
+            margin-bottom: 2.5rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.5px;
+        }
+
+        .section-header p {
+            color: var(--gray-600);
+            font-size: 1.05rem;
+        }
+
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 1.5rem;
+        }
+
+        .highlight-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--gray-200);
+            transition: var(--transition);
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-light);
+        }
+
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-light);
+            color: var(--primary);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .highlight-card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+        }
+
+        .highlight-card p {
+            color: var(--gray-600);
+            font-size: 0.95rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .tag-list {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: var(--light);
+            color: var(--gray-600);
+            font-size: 0.78rem;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            bottom: 10px;
+            width: 3px;
+            background: var(--gray-200);
         }
 
         .timeline-item {
-            background-color: var(--card-bg);
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2rem;
+            top: 8px;
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            background: var(--primary);
+            border: 4px solid var(--white);
+            transform: translateX(-50%);
+            box-shadow: 0 0 0 3px var(--primary-light);
+        }
+
+        .timeline-content {
+            background: var(--white);
+            border-radius: 16px;
             padding: 1.8rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-            border-left: 5px solid var(--primary-color);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--gray-200);
         }
 
         .timeline-header {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 0.8rem;
+            margin-bottom: 1rem;
             flex-wrap: wrap;
+            gap: 0.5rem;
         }
 
         .role-title {
             font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--text-main);
+            font-weight: 800;
+            color: var(--dark);
         }
 
         .company-name {
-            font-weight: 600;
-            color: var(--primary-color);
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 0.95rem;
         }
 
-        .date-location {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            text-align: right;
+        .period {
+            background: var(--light);
+            color: var(--gray-600);
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 20px;
         }
 
         .timeline-body ul {
-            padding-left: 1.2rem;
-            color: #4a5568;
-        }
-
-        .timeline-body li {
-            margin-bottom: 0.4rem;
-        }
-
-        /* Skills Grid */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .skills-category h3 {
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-            color: var(--primary-color);
-            border-bottom: 2px solid #e2f0ee;
-            padding-bottom: 0.4rem;
-        }
-
-        .skills-list {
             list-style: none;
         }
 
-        .skills-list li {
-            background-color: var(--card-bg);
-            padding: 0.6rem 1rem;
-            margin-bottom: 0.5rem;
-            border-radius: 6px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
-            font-weight: 500;
-            display: flex;
-            align-items: center;
+        .timeline-body li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.6rem;
+            color: var(--gray-600);
+            font-size: 0.95rem;
         }
 
-        .skills-list li::before {
-            content: "•";
-            color: var(--primary-color);
-            font-weight: bold;
-            display: inline-block;
-            width: 1em;
+        .timeline-body li::before {
+            content: "\f00c";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-size: 0.8rem;
         }
 
-        /* Education & Certs */
-        .grid-2 {
+        .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.5rem;
         }
 
-        .item-box {
-            margin-bottom: 1rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px dashed var(--border-color);
+        .skill-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 1.8rem;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--gray-200);
         }
 
-        .item-box:last-child {
+        .skill-card h3 {
+            font-size: 1.1rem;
+            font-weight: 800;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--primary);
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+        }
+
+        .skill-pill {
+            background: var(--light);
+            border: 1px solid var(--gray-200);
+            padding: 8px 14px;
+            border-radius: 10px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .edu-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--gray-200);
+        }
+
+        .edu-card h3 {
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--primary);
+        }
+
+        .edu-item {
+            padding-bottom: 1.2rem;
+            margin-bottom: 1.2rem;
+            border-bottom: 1px dashed var(--gray-200);
+        }
+
+        .edu-item:last-child {
             border-bottom: none;
-            margin-bottom: 0;
             padding-bottom: 0;
+            margin-bottom: 0;
         }
 
-        .item-title {
+        .edu-title {
             font-weight: 700;
-            color: var(--text-main);
+            color: var(--dark);
         }
 
-        .item-sub {
-            color: var(--text-muted);
-            font-size: 0.9rem;
+        .edu-meta {
+            font-size: 0.85rem;
+            color: var(--gray-600);
+            margin-top: 2px;
         }
 
-        /* Contact Section */
-        .contact-card {
-            background-color: var(--card-bg);
-            border-radius: 12px;
-            padding: 2.5rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+        .contact-banner {
+            background: linear-gradient(135deg, var(--primary) 0%, #09343f 100%);
+            border-radius: 24px;
+            padding: 3.5rem 2rem;
+            color: var(--white);
             text-align: center;
-            max-width: 700px;
-            margin: 0 auto;
+            box-shadow: var(--shadow-lg);
         }
 
-        .contact-info {
+        .contact-banner h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 0.8rem;
+        }
+
+        .contact-banner p {
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .contact-links {
             display: flex;
             justify-content: center;
-            gap: 2rem;
+            gap: 1.5rem;
             flex-wrap: wrap;
-            margin-top: 1.5rem;
         }
 
-        .contact-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.3rem;
-        }
-
-        .contact-item a {
-            color: var(--primary-color);
+        .contact-btn {
+            background: var(--white);
+            color: var(--primary);
+            padding: 0.8rem 1.6rem;
+            border-radius: 12px;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transition);
+        }
+
+        .contact-btn:hover {
+            background: var(--secondary);
+            color: var(--white);
         }
 
         footer {
             text-align: center;
             padding: 2rem;
-            background-color: #ffffff;
-            color: var(--text-muted);
+            color: var(--gray-600);
             font-size: 0.9rem;
-            border-top: 1px solid var(--border-color);
+            border-top: 1px solid var(--gray-200);
+            margin-top: 2rem;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 992px) {
             .hero {
-                flex-direction: column-reverse;
+                grid-template-columns: 1fr;
+                gap: 2rem;
                 text-align: center;
             }
 
-            .hero-text {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
+            .badge-role {
+                margin: 0 auto 1rem;
+            }
+
+            .hero-stats {
+                justify-content: center;
             }
 
             .hero-buttons {
@@ -419,302 +635,321 @@
                 flex-direction: column;
                 align-items: flex-start;
             }
+        }
 
-            .date-location {
-                text-align: left;
-                margin-top: 0.3rem;
-            }
-
+        @media (max-width: 768px) {
             .nav-links {
                 display: none;
+            }
+
+            .hero-text h1 {
+                font-size: 2.4rem;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header / Navigation -->
     <header>
         <nav>
-            <div class="brand-name">Ei Ei Aung</div>
+            <a href="#" class="brand-logo">
+                <span>EA</span> Ei Ei Aung
+            </a>
             <ul class="nav-links">
-                <li><a href="#about" class="active">About Me</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#highlights">Highlights</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#education">Education</a></li>
-                <li><a href="#contact">Contact Me</a></li>
-                <li><a href="Resume.pdf" download class="btn-download">Download Resume</a></li>
+                <li><a href="Resume.pdf" download class="btn-download"><i class="fa-solid fa-download"></i> Download Resume</a></li>
             </ul>
         </nav>
     </header>
 
     <div class="container">
         <!-- Hero Section -->
-        <section class="hero">
+        <section class="hero" id="about">
             <div class="hero-text">
-                <span class="tagline">Accountant</span>
-                <h1>Financial Management & Accounting Professional</h1>
-                <div class="sub-title">Senior Accountant • Odoo ERP • Financial Reporting • Audit Coordination</div>
-                <p class="summary-text">
-                    Accounting professional with over 12 years of experience in financial reporting, full-cycle accounting, cash flow management, and audit coordination across retail, trading, construction, and banking industries.
-                </p>
+                <div class="badge-role">
+                    <i class="fa-solid fa-calculator"></i> ASSISTANT CHIEF ACCOUNTANT
+                </div>
+                <h1>Financial Leadership & <span>Strategic Accounting</span></h1>
+                <p class="sub-title">12+ years of experience specializing in Odoo ERP, full-cycle financial reporting, cash flow optimization, and external audit management across Retail, Construction, and Banking industries[cite: 1].</p>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h3>12+</h3>
+                        <p>Years Experience[cite: 1]</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>800+</h3>
+                        <p>Monthly Invoices[cite: 1]</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>4+</h3>
+                        <p>Junior Staff Managed[cite: 1]</p>
+                    </div>
+                </div>
+
                 <div class="hero-buttons">
-                    <a href="#experience" class="btn btn-primary">View Experience</a>
-                    <a href="mailto:eieiaung.1804@gmail.com" class="btn btn-outline">Email Me</a>
-                    <a href="https://www.linkedin.com/in/ei-ei-aung-24044b273" target="_blank" class="btn btn-outline">LinkedIn</a>
+                    <a href="#experience" class="btn btn-primary"><i class="fa-solid fa-briefcase"></i> View Experience</a>
+                    <a href="#contact" class="btn btn-outline"><i class="fa-solid fa-envelope"></i> Contact Me</a>
+                    <a href="https://www.linkedin.com/in/ei-ei-aung-24044b273" target="_blank" class="btn btn-outline"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
                 </div>
             </div>
 
-            <div class="hero-image-container">
-                <img src="profile.jpg" alt="Ei Ei Aung" class="profile-img">
-                <div class="hero-card-info">
-                    <h3>Professional Focus</h3>
-                    <p>Financial Analysis, General Ledger management, Cash Flow Monitoring, ERP Implementation, and Tax Compliance.</p>
+            <!-- Profile Card -->
+            <div class="profile-card">
+                <div class="profile-img-wrap">
+                    <img src="profile.jpg" alt="Ei Ei Aung" class="profile-img">
+                    <div class="experience-badge">12+ Yrs Exp[cite: 1]</div>
                 </div>
-            </div>
-        </section>
+                <h2>Ms. Ei Ei Aung</h2>
+                <div class="designation">Assistant Chief Accountant</div>
+                <div class="sub-designation">Senior Accountant</div>
 
-        <!-- About Me Section -->
-        <section id="about">
-            <h2 class="section-title">About Me</h2>
-            <p>
-                Accounting professional with over 12 years of experience in financial reporting, full-cycle accounting, cash flow management, and audit coordination across retail, trading, construction, and banking industries. Experienced in using accounting software including Odoo, MYOB, and QuickBooks. Provides reliable financial insights to support daily business decisions and operational efficiency.
-            </p>
-            <div class="about-cards">
-                <div class="card">
-                    <h3>Financial Operations</h3>
-                    <p>Expertise in managing general ledgers, revenue & expense recognition, daily cash flow monitoring, and preparing financial statements for management review.</p>
-                </div>
-                <div class="card">
-                    <h3>Audit & Compliance</h3>
-                    <p>Strong background in inventory auditing, tax filing processes, and coordinating seamlessly with external auditors during annual audits.</p>
+                <div class="info-pills">
+                    <div class="info-pill">
+                        <i class="fa-solid fa-location-dot"></i> Mandalay, Myanmar[cite: 1]
+                    </div>
+                    <div class="info-pill">
+                        <i class="fa-solid fa-graduation-cap"></i> ACCA Part 1 & B.Sc (Math)[cite: 1]
+                    </div>
+                    <div class="info-pill">
+                        <i class="fa-solid fa-laptop-code"></i> Odoo ERP, MYOB, QuickBooks[cite: 1]
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Experience Section -->
+        <!-- Highlights Section -->
+        <section id="highlights">
+            <div class="section-header">
+                <h2>Professional Highlights</h2>
+                <p>Key financial competencies and management capabilities[cite: 1].</p>
+            </div>
+
+            <div class="highlights-grid">
+                <div class="highlight-card">
+                    <div class="card-icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <h3>ERP & Financial Reporting</h3>
+                    <p>Managing general ledger, journal entries, bank reconciliations, and financial reporting via Odoo ERP[cite: 1].</p>
+                    <div class="tag-list">
+                        <span class="tag">Odoo ERP</span>
+                        <span class="tag">General Ledger</span>
+                        <span class="tag">Bank Reconciliation</span>
+                    </div>
+                </div>
+
+                <div class="highlight-card">
+                    <div class="card-icon"><i class="fa-solid fa-boxes-packing"></i></div>
+                    <h3>Inventory & Stock Control</h3>
+                    <p>Executed inventory audits that strengthened control processes and significantly reduced stock variances[cite: 1].</p>
+                    <div class="tag-list">
+                        <span class="tag">Inventory Audit</span>
+                        <span class="tag">Variance Control</span>
+                        <span class="tag">Cost Analysis</span>
+                    </div>
+                </div>
+
+                <div class="highlight-card">
+                    <div class="card-icon"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+                    <h3>Audit & Tax Compliance</h3>
+                    <p>Direct coordination with external auditors during annual audits and oversight of company tax filings[cite: 1].</p>
+                    <div class="tag-list">
+                        <span class="tag">External Audit</span>
+                        <span class="tag">Tax Filings</span>
+                        <span class="tag">Compliance</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Timeline Section -->
         <section id="experience">
-            <h2 class="section-title">Work Experience</h2>
+            <div class="section-header">
+                <h2>Work Experience</h2>
+                <p>Demonstrated progression and proven history in corporate financial roles[cite: 1].</p>
+            </div>
+
             <div class="timeline">
-
-                <!-- Job 1 -->
                 <div class="timeline-item">
-                    <div class="timeline-header">
-                        <div>
-                            <div class="role-title">Assistant Chief Accountant / Senior Accountant</div>
-                            <div class="company-name">Choice Mart Company Limited</div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <div class="role-title">Assistant Chief Accountant / Senior Accountant</div>
+                                <div class="company-name">Choice Mart Company Limited</div>
+                            </div>
+                            <div class="period">May 2023 - Present | Mandalay[cite: 1]</div>
                         </div>
-                        <div class="date-location">
-                            May 2023 - Present<br>Mandalay, Myanmar
+                        <div class="timeline-body">
+                            <ul>
+                                <li>Manage revenue & expense recognition in compliance with accounting standards using Odoo ERP[cite: 1].</li>
+                                <li>Monitor daily cash flow and deliver financial statements directly to the General Manager[cite: 1].</li>
+                                <li>Supervise and guide 4 junior accountants, ensuring operational accuracy[cite: 1].</li>
+                                <li>Conducted inventory audits improving stock accuracy and reducing variances[cite: 1].</li>
+                                <li>Coordinate annual external audits and handle official tax filing processes[cite: 1].</li>
+                            </ul>
                         </div>
-                    </div>
-                    <div class="timeline-body">
-                        <ul>
-                            <li>Manage revenue and expense recognition in compliance with accounting standards and company policies.</li>
-                            <li>Maintain financial reporting, general ledger, bank reconciliation, and journal entries using Odoo ERP.</li>
-                            <li>Monitor daily cash flow to support timely financial planning and operational decisions.</li>
-                            <li>Provide guidance and supervision to 4 junior accountants, ensuring accuracy in daily accounting operations.</li>
-                            <li>Conducted inventory audits that improved stock accuracy, strengthened inventory control processes, and reduced variances.</li>
-                            <li>Perform financial analysis, organize financial statements, and report directly to the General Manager.</li>
-                            <li>Coordinate with external auditors during annual audits and handle tax filing processes.</li>
-                        </ul>
                     </div>
                 </div>
 
-                <!-- Job 2 -->
                 <div class="timeline-item">
-                    <div class="timeline-header">
-                        <div>
-                            <div class="role-title">AR Accountant cum Sales Admin</div>
-                            <div class="company-name">You And Me Solution Group</div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <div class="role-title">AR Accountant cum Sales Admin</div>
+                                <div class="company-name">You And Me Solution Group</div>
+                            </div>
+                            <div class="period">Jun 2021 - Apr 2023 | Mandalay[cite: 1]</div>
                         </div>
-                        <div class="date-location">
-                            Jun 2021 - Apr 2023<br>Mandalay, Myanmar
+                        <div class="timeline-body">
+                            <ul>
+                                <li>Generated 800+ monthly invoices and account statements using ERP system[cite: 1].</li>
+                                <li>Reconciled sales and inventory balances while actively managing AR overdue collections[cite: 1].</li>
+                            </ul>
                         </div>
-                    </div>
-                    <div class="timeline-body">
-                        <ul>
-                            <li>Managed sales orders using an ERP system.</li>
-                            <li>Generated over 800 invoices and monthly account statements, ensuring timely billing and documentation.</li>
-                            <li>Checked and reconciled sales and inventory balances.</li>
-                            <li>Maintained AR ledgers and monitored AR overdue balances.</li>
-                            <li>Arranged monthly AR overdue reports to support timely collection follow-ups.</li>
-                            <li>Recorded daily transactions and reported to the Chief Accountant.</li>
-                        </ul>
                     </div>
                 </div>
 
-                <!-- Job 3 -->
                 <div class="timeline-item">
-                    <div class="timeline-header">
-                        <div>
-                            <div class="role-title">Senior Accountant</div>
-                            <div class="company-name">Footstone Construction</div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <div class="role-title">Senior Accountant</div>
+                                <div class="company-name">Footstone Construction</div>
+                            </div>
+                            <div class="period">Sep 2017 - May 2021 | Mandalay[cite: 1]</div>
                         </div>
-                        <div class="date-location">
-                            Sep 2017 - May 2021<br>Mandalay, Myanmar
+                        <div class="timeline-body">
+                            <ul>
+                                <li>Analyzed revenue projections and monitored site expenses against project budgets[cite: 1].</li>
+                                <li>Verified contractor/subcontractor payment claims and prepared general ledger balance sheets[cite: 1].</li>
+                            </ul>
                         </div>
-                    </div>
-                    <div class="timeline-body">
-                        <ul>
-                            <li>Analyzed revenue projections and monitored project costs against budgets.</li>
-                            <li>Supervised construction site expenses and verified contractor/subcontractor payment claims.</li>
-                            <li>Handled inventory, accounts receivable, accounts payable, bank reconciliation, and periodic accounting reports.</li>
-                            <li>Controlled daily cash transactions and presented financial status to management.</li>
-                            <li>Coordinated with project managers on budgeting, cost estimates, and expense planning.</li>
-                            <li>Prepared general ledger accounts and financial statements, including balance sheets.</li>
-                        </ul>
                     </div>
                 </div>
 
-                <!-- Job 4 -->
                 <div class="timeline-item">
-                    <div class="timeline-header">
-                        <div>
-                            <div class="role-title">Senior Assistant / Junior Assistant</div>
-                            <div class="company-name">KBZ Bank</div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <div class="role-title">Senior / Junior Assistant</div>
+                                <div class="company-name">KBZ Bank</div>
+                            </div>
+                            <div class="period">Jan 2014 - Aug 2017 | Mandalay[cite: 1]</div>
                         </div>
-                        <div class="date-location">
-                            Jan 2014 - Aug 2017<br>Mandalay, Myanmar
+                        <div class="timeline-body">
+                            <ul>
+                                <li>Processed daily invoices, cash transactions, and card services (MPU, Visa, Mastercard)[cite: 1].</li>
+                                <li>Supervised 3 junior staff and prepared monthly balance sheets and financial reports[cite: 1].</li>
+                            </ul>
                         </div>
-                    </div>
-                    <div class="timeline-body">
-                        <ul>
-                            <li>Verified and processed daily invoices, cash transactions, and business expenses.</li>
-                            <li>Managed account openings, cash deposits/withdrawals, and MPU, Visa, and Mastercard services.</li>
-                            <li>Supported 3 junior staff, assisted in accounting duties, and reported financial results to the Branch Manager.</li>
-                            <li>Maintained general ledgers and prepared monthly balance sheets, quarterly, and yearly financial reports.</li>
-                            <li>Reviewed bank charges, interest rates, and loan fees, ensuring correct application.</li>
-                        </ul>
                     </div>
                 </div>
-
             </div>
         </section>
 
         <!-- Skills Section -->
         <section id="skills">
-            <h2 class="section-title">Skills & Proficiencies</h2>
+            <div class="section-header">
+                <h2>Skills & Competencies</h2>
+                <p>Comprehensive skillset built across technical accounting and leadership[cite: 1].</p>
+            </div>
+
             <div class="skills-grid">
-                <div class="skills-category">
-                    <h3>Hard Skills</h3>
-                    <ul class="skills-list">
-                        <li>Management Accounting</li>
-                        <li>Financial Reporting</li>
-                        <li>General Ledger (GL)</li>
-                        <li>Cash Flow Management</li>
-                        <li>Inventory Control</li>
-                        <li>Accounts Payable & Receivable</li>
-                        <li>Tax Compliance</li>
-                    </ul>
+                <div class="skill-card">
+                    <h3><i class="fa-solid fa-file-invoice"></i> Accounting Expertise</h3>
+                    <div class="skill-tags">
+                        <span class="skill-pill">Management Accounting[cite: 1]</span>
+                        <span class="skill-pill">Financial Reporting[cite: 1]</span>
+                        <span class="skill-pill">General Ledger (GL)[cite: 1]</span>
+                        <span class="skill-pill">Cash Flow Management[cite: 1]</span>
+                        <span class="skill-pill">Inventory Control[cite: 1]</span>
+                        <span class="skill-pill">Tax Compliance[cite: 1]</span>
+                    </div>
                 </div>
-                <div class="skills-category">
-                    <h3>Software & Tools</h3>
-                    <ul class="skills-list">
-                        <li>Odoo ERP</li>
-                        <li>MYOB</li>
-                        <li>QuickBooks</li>
-                        <li>Microsoft Excel & Office</li>
-                        <li>Computerized Accounting</li>
-                    </ul>
+
+                <div class="skill-card">
+                    <h3><i class="fa-solid fa-desktop"></i> Software & Tools</h3>
+                    <div class="skill-tags">
+                        <span class="skill-pill">Odoo ERP[cite: 1]</span>
+                        <span class="skill-pill">QuickBooks[cite: 1]</span>
+                        <span class="skill-pill">MYOB[cite: 1]</span>
+                        <span class="skill-pill">Microsoft Excel & Word[cite: 1]</span>
+                    </div>
                 </div>
-                <div class="skills-category">
-                    <h3>Soft Skills</h3>
-                    <ul class="skills-list">
-                        <li>Leadership & Supervision</li>
-                        <li>Critical Thinking</li>
-                        <li>Problem-solving</li>
-                        <li>Team Collaboration</li>
-                        <li>Time Management</li>
-                        <li>Growth Mindset</li>
-                    </ul>
+
+                <div class="skill-card">
+                    <h3><i class="fa-solid fa-users"></i> Soft Skills & Leadership</h3>
+                    <div class="skill-tags">
+                        <span class="skill-pill">Staff Supervision[cite: 1]</span>
+                        <span class="skill-pill">Critical Thinking[cite: 1]</span>
+                        <span class="skill-pill">Problem Solving[cite: 1]</span>
+                        <span class="skill-pill">Team Collaboration[cite: 1]</span>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Education & Certifications Section -->
         <section id="education">
-            <h2 class="section-title">Education & Training</h2>
             <div class="grid-2">
-                <div class="card">
-                    <h3 style="margin-bottom: 1.5rem;">Education</h3>
-                    <div class="item-box">
-                        <div class="item-title">Management Accounting (ACCA, Part I)</div>
-                        <div class="item-sub">2019</div>
+                <div class="edu-card">
+                    <h3><i class="fa-solid fa-graduation-cap"></i> Education</h3>
+                    <div class="edu-item">
+                        <div class="edu-title">Management Accounting (ACCA Part 1)</div>
+                        <div class="edu-meta">2019[cite: 1]</div>
                     </div>
-                    <div class="item-box">
-                        <div class="item-title">Diploma in Accounting & Finance (LCCI Level 3)</div>
-                        <div class="item-sub">2018</div>
+                    <div class="edu-item">
+                        <div class="edu-title">Diploma in Accounting & Finance (LCCI Level 3)</div>
+                        <div class="edu-meta">2018[cite: 1]</div>
                     </div>
-                    <div class="item-box">
-                        <div class="item-title">Postgraduate Diploma in English</div>
-                        <div class="item-sub">MUFL University - 2017</div>
+                    <div class="edu-item">
+                        <div class="edu-title">Postgraduate Diploma in English</div>
+                        <div class="edu-meta">MUFL University - 2017[cite: 1]</div>
                     </div>
-                    <div class="item-box">
-                        <div class="item-title">B.Sc. (Mathematics) (Hons)</div>
-                        <div class="item-sub">Yadanarbon University - 2014</div>
+                    <div class="edu-item">
+                        <div class="edu-title">B.Sc. (Mathematics) (Hons)</div>
+                        <div class="edu-meta">Yadanarbon University - 2014[cite: 1]</div>
                     </div>
                 </div>
 
-                <div class="card">
-                    <h3 style="margin-bottom: 1.5rem;">Training & Certifications</h3>
-                    <div class="item-box">
-                        <div class="item-title">Dip IFR</div>
-                        <div class="item-sub">Teacher Pan Ei Accounting and Finance (2026)</div>
+                <div class="edu-card">
+                    <h3><i class="fa-solid fa-certificate"></i> Training & Certifications</h3>
+                    <div class="edu-item">
+                        <div class="edu-title">Dip IFR</div>
+                        <div class="edu-meta">Teacher Pan Ei Accounting & Finance (2026)[cite: 1]</div>
                     </div>
-                    <div class="item-box">
-                        <div class="item-title">AB (F1), MA (F2), FA (F3) (ACCA Part-1)</div>
-                        <div class="item-sub">Nay Linn Aung Finance and Accountancy Academy (2019)</div>
+                    <div class="edu-item">
+                        <div class="edu-title">ACCA Part-1 (AB, MA, FA)</div>
+                        <div class="edu-meta">Nay Linn Aung Finance Academy (2019)[cite: 1]</div>
                     </div>
-                    <div class="item-box">
-                        <div class="item-title">LCCI Level 3 & Computerized Accounting with Excel</div>
-                        <div class="item-sub">Khin Maung Htwe LCCI (UK) Training Center (2018)</div>
-                    </div>
-                    <div class="item-box">
-                        <div class="item-title">Level 3 Certificate in Computerized Accounting (MYOB)</div>
-                        <div class="item-sub">Kyaw Swar Win Training Center (2012)</div>
+                    <div class="edu-item">
+                        <div class="edu-title">Computerized Accounting (MYOB & Excel)</div>
+                        <div class="edu-meta">Khin Maung Htwe & Kyaw Swar Win Centers[cite: 1]</div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Contact Section -->
+        <!-- Contact Banner -->
         <section id="contact">
-            <div class="contact-card">
-                <h2 style="font-size: 2rem; color: #1a202c; margin-bottom: 0.5rem;">Get In Touch</h2>
-                <p style="color: var(--text-muted);">Feel free to reach out for professional opportunities or inquiries.</p>
-                
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <span style="font-size: 0.85rem; color: var(--text-muted);">Phone / WhatsApp</span>
-                        <a href="tel:+959797331084">+959797331084</a>
-                    </div>
-                    <div class="contact-item">
-                        <span style="font-size: 0.85rem; color: var(--text-muted);">Email</span>
-                        <a href="mailto:eieiaung.1804@gmail.com">eieiaung.1804@gmail.com</a>
-                    </div>
-                    <div class="contact-item">
-                        <span style="font-size: 0.85rem; color: var(--text-muted);">LinkedIn</span>
-                        <a href="https://www.linkedin.com/in/ei-ei-aung-24044b273" target="_blank">Ei Ei Aung</a>
-                    </div>
+            <div class="contact-banner">
+                <h2>Get In Touch</h2>
+                <p>Feel free to reach out for executive opportunities or financial consulting inquiries[cite: 1].</p>
+                <div class="contact-links">
+                    <a href="tel:+959797331084" class="contact-btn"><i class="fa-solid fa-phone"></i> +959797331084</a>[cite: 1]
+                    <a href="mailto:eieiaung.1804@gmail.com" class="contact-btn"><i class="fa-solid fa-envelope"></i> eieiaung.1804@gmail.com</a>[cite: 1]
+                    <a href="https://www.linkedin.com/in/ei-ei-aung-24044b273" target="_blank" class="contact-btn"><i class="fa-brands fa-linkedin"></i> LinkedIn Profile</a>[cite: 1]
                 </div>
             </div>
         </section>
     </div>
 
     <footer>
-        <p>&copy; 2026 Ei Ei Aung. All rights reserved.</p>
+        <p>&copy; 2026 Ms. Ei Ei Aung. All rights reserved.</p>
     </footer>
 
-    <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
 </body>
 </html>
