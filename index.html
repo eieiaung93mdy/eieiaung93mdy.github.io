@@ -641,6 +641,132 @@
             .hero-text h1 {
                 font-size: 2.4rem;
             }
+            .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+    margin-top: 30px;
+}
+.portfolio-card {
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border: 1px solid #e2e8f0;
+}
+.swiper {
+    width: 100%;
+    height: 220px;
+}
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.card-content {
+    padding: 20px;
+}
+.card-badge {
+    font-size: 11px;
+    font-weight: 700;
+    color: #0f4c5c;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.card-content h3 {
+    font-size: 18px;
+    margin: 8px 0 12px;
+}
+.card-content ul {
+    padding-left: 18px;
+    font-size: 14px;
+    color: #475569;
+}
+            .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+}
+
+.portfolio-card {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md, 0 8px 24px rgba(15, 23, 42, 0.08));
+    border: 1px solid var(--gray-200, #e2e8f0);
+}
+
+.portfolio-card .swiper {
+    width: 100%;
+    height: 240px;
+    position: relative;
+}
+
+.portfolio-card .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.portfolio-card .card-content {
+    padding: 24px;
+}
+
+.portfolio-card .card-badge {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--primary, #0f4c5c);
+    letter-spacing: 0.5px;
+    display: inline-block;
+    margin-bottom: 6px;
+}
+
+.portfolio-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--dark, #0f172a);
+    margin-bottom: 12px;
+}
+
+.portfolio-card ul {
+    padding-left: 18px;
+    margin: 0;
+}
+
+.portfolio-card li {
+    font-size: 14px;
+    color: var(--gray-600, #475569);
+    margin-bottom: 6px;
+    line-height: 1.5;
+}
+
+/* Swiper Controls Customization */
+.swiper-button-next, .swiper-button-prev {
+    color: #ffffff !important;
+    background: rgba(15, 23, 42, 0.5);
+    width: 36px !important;
+    height: 36px !important;
+    border-radius: 50%;
+    backdrop-filter: blur(4px);
+}
+
+.swiper-button-next::after, .swiper-button-prev::after {
+    font-size: 14px !important;
+    font-weight: bold;
+}
+
+.swiper-pagination-fraction {
+    background: rgba(15, 23, 42, 0.6);
+    color: #ffffff;
+    padding: 4px 10px;
+    border-radius: 12px;
+    width: auto !important;
+    left: auto !important;
+    right: 12px !important;
+    bottom: 12px !important;
+    font-size: 12px;
+}
         }
     </style>
 </head>
@@ -893,18 +1019,22 @@
                 </div>
             </div>
 
-        <section id="portfolio" class="section">
-    <div class="container">
-        <h2>Mini Portfolio & Financial Showcase</h2>
-        <p>Selected accounting highlights, systems management, and data visualization samples.</p>
+        <section id="portfolio" style="padding: 60px 0; background-color: var(--light, #f8fafc);">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+        <h2 style="font-size: 28px; font-weight: 700; color: var(--dark, #0f172a); margin-bottom: 8px;">Mini Portfolio & Financial Showcase</h2>
+        <p style="color: var(--gray-600, #475569); margin-bottom: 30px;">Selected accounting highlights, systems management, and data visualization samples.</p>
 
         <div class="portfolio-grid">
-            <!-- Card 1: ERP Systems -->
+            <!-- Card 1: Systems & Tools -->
             <div class="portfolio-card">
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="odoo-sample.png" alt="Odoo ERP"></div>
-                        <div class="swiper-slide"><img src="quickbooks-sample.png" alt="QuickBooks"></div>
+                        <div class="swiper-slide">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop" alt="Odoo ERP Analytics Dashboard">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop" alt="Financial Systems & Data">
+                        </div>
                     </div>
                     <div class="swiper-button-next"></div>
                     <div class="swiper-button-prev"></div>
@@ -920,12 +1050,16 @@
                 </div>
             </div>
 
-            <!-- Card 2: Financial Reporting -->
+            <!-- Card 2: Financial Analytics -->
             <div class="portfolio-card">
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="chart1.png" alt="Sales Pie Chart"></div>
-                        <div class="swiper-slide"><img src="chart2.png" alt="Revenue Bar Chart"></div>
+                        <div class="swiper-slide">
+                            <img src="https://images.unsplash.com/photo-1543286386-713bdd548da4?q=80&w=800&auto=format&fit=crop" alt="Financial Reporting Charts">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=800&auto=format&fit=crop" alt="Data Visualization">
+                        </div>
                     </div>
                     <div class="swiper-button-next"></div>
                     <div class="swiper-button-prev"></div>
@@ -941,7 +1075,6 @@
                 </div>
             </div>
         </div>
-    </div>
 </section>
 
         <!-- Education & Certifications Section -->
@@ -1002,8 +1135,7 @@
     <footer>
         <p>&copy; 2026 Ms. Ei Ei Aung. All rights reserved.</p>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"></script>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
   var swiper = new Swiper(".mySwiper", {
     navigation: {
