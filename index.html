@@ -14,6 +14,7 @@
     <meta property="og:title" content="Ei Ei Aung | Assistant Chief Accountant">
     <meta property="og:description" content="12+ years experience in Financial Leadership, Strategic Accounting, and Odoo ERP.">
     <meta property="og:image" content="https://eieiaung93mdy.github.io/profile.jpg">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     
     <style>
         :root {
@@ -891,7 +892,57 @@
                     </div>
                 </div>
             </div>
-        </section>
+
+        <section id="portfolio" class="section">
+    <div class="container">
+        <h2>Mini Portfolio & Financial Showcase</h2>
+        <p>Selected accounting highlights, systems management, and data visualization samples.</p>
+
+        <div class="portfolio-grid">
+            <!-- Card 1: ERP Systems -->
+            <div class="portfolio-card">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="odoo-sample.png" alt="Odoo ERP"></div>
+                        <div class="swiper-slide"><img src="quickbooks-sample.png" alt="QuickBooks"></div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <div class="card-content">
+                    <span class="card-badge">SYSTEMS & TOOLS</span>
+                    <h3>Odoo ERP & Accounting Systems Management</h3>
+                    <ul>
+                        <li>Managed full-cycle accounting and general ledger via Odoo ERP.</li>
+                        <li>Configured Chart of Accounts, Journal Entries, and Bank Reconciliations.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Card 2: Financial Reporting -->
+            <div class="portfolio-card">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="chart1.png" alt="Sales Pie Chart"></div>
+                        <div class="swiper-slide"><img src="chart2.png" alt="Revenue Bar Chart"></div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <div class="card-content">
+                    <span class="card-badge">FINANCIAL ANALYTICS</span>
+                    <h3>Financial Reporting & Visual Dashboards</h3>
+                    <ul>
+                        <li>Created visual financial reports and category-wise sales breakdown for GM review.</li>
+                        <li>Analyzed revenue projections and sales growth trends.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
         <!-- Education & Certifications Section -->
         <section id="education">
@@ -951,6 +1002,20 @@
     <footer>
         <p>&copy; 2026 Ms. Ei Ei Aung. All rights reserved.</p>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      type: "fraction",
+    },
+  });
+</script>
 
 </body>
 </html>
